@@ -1,9 +1,14 @@
-import React from 'react'
+import {atom,useAtom} from "jotai";
 
-function App() {
+const ageAtom=atom(25);
+
+export const App=()=>{
+  const [age,setAge]=useAtom(ageAtom);
+
   return (
-    <div>App</div>
+    <div>
+      <h1>This age is {age}</h1>
+      <button onClick={()=>setAge((original)=>original+1)}>Click me</button>
+    </div>
   )
 }
-
-export default App
