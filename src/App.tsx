@@ -1,14 +1,19 @@
 import {atom,useAtom} from "jotai";
+import TodoAdd from "./components/TodoAdd";
+import TodoList from "./components/TodoList";
+import { todosAtom } from "./store/TodoStore";
 
 const ageAtom=atom(25);
 
 export const App=()=>{
-  const [age,setAge]=useAtom(ageAtom);
+  const [todos]=useAtom(todosAtom);
 
   return (
-    <div>
-      <h1>This age is {age}</h1>
-      <button onClick={()=>setAge((original)=>original+1)}>Click me</button>
+    <div className="App">
+          {todos.map((duty)=>(
+            <TodoList key={duty.id}/>
+          ))}
+          <TodoAdd/>
     </div>
   )
 }
