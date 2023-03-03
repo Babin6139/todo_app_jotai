@@ -1,7 +1,10 @@
 function TodoAdd(){
     return (
         <div>
-            <input type="text" />
+            <input placeholder="New todo" />
+            <button>Add Todo</button>
         </div>
     )
 }
+
+export default TodoAdd;
