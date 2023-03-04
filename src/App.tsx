@@ -2,8 +2,8 @@ import {atom,useAtom} from "jotai";
 import TodoAdd from "./components/TodoAdd";
 import TodoList from "./components/TodoList";
 import { todosAtom } from "./store/TodoStore";
+import "./App.css";
 
-const ageAtom=atom(25);
 
 export const App=()=>{
   const [todos]=useAtom(todosAtom);
@@ -11,7 +11,7 @@ export const App=()=>{
   return (
     <div className="App">
           {todos.map((duty)=>(
-            <TodoList key={duty.id}/>
+            <TodoList key={duty.id} task={duty}/>
           ))}
           <TodoAdd/>
     </div>

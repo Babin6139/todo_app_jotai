@@ -1,6 +1,6 @@
 import {atom} from "jotai";
 
-type TodoData={
+export interface TodoData{
     text:string,
     isdone:boolean,
     id:number
